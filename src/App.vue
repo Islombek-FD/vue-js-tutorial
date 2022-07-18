@@ -33,9 +33,7 @@
             this.posts.push(post)
          },
          removePost(post) {
-            const restPosts = this.posts.filter(item => item.id !== post.id);
-
-            this.posts = restPosts;
+            this.posts = this.posts.filter(p => p.id !== post.id);
          }
       }
    }
