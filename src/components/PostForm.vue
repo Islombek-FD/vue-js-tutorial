@@ -2,18 +2,27 @@
    <form @submit.prevent>
       <h2>Create post</h2>
       
-      <input @input="post.title = $event.target.value" v-bind:value="post.title" class="input" type="text" placeholder="Write title">
-      <input @input="post.description = $event.target.value" v-bind:value="post.description" class="input" type="text" placeholder="Write description">
+      <my-input 
+         v-model="post.title"
+         class="input" 
+         type="text" 
+         placeholder="Write title"
+         />
+      <my-input
+         v-model="post.description"
+         class="input" 
+         type="text" 
+         placeholder="Write description"
+         />
       <my-button @click="createPost" class="btn btn-primary block">Add post</my-button>
    </form>
 </template>
 
+// @input="post.title = $event.target.value" v-bind:value="post.title" = v-model='post.title'
+// @input="post.description = $event.target.value" v-bind:value="post.description" = v-model='post.description'
+
 <script>
-   import MyButton from '@/components/UI/MyButton.vue';
    export default {
-      components: {
-         MyButton
-      },
       data() {
          return {
             post: {
@@ -36,15 +45,5 @@
 </script>
 
 <style scoped>
-   .input {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 2px solid gray;
-   }
-
-   .input:focus {
-      outline: none;
-   }
+   
 </style>
