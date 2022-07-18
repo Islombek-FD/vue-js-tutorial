@@ -7,13 +7,15 @@
          class="input" 
          type="text" 
          placeholder="Write title"
-         />
+      />
+         
       <my-input
          v-model="post.description"
          class="input" 
          type="text" 
          placeholder="Write description"
-         />
+      />
+
       <my-button @click="createPost" class="btn btn-primary block">Add post</my-button>
    </form>
 </template>

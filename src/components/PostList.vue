@@ -2,7 +2,7 @@
    <div>
       <h2>Pragraming languages list</h2>
 
-      <post-item v-for="post in posts" :key="post.id" :post='post'/>
+      <post-item @remove="$emit('remove', post)" v-for="post in posts" :key="post.id" :post='post'/>
    </div>
 </template>
 
@@ -17,8 +17,8 @@
          posts: {
             type: Array,
             required: true
-         }
-      }
+         },
+      },
    }
 </script>
 

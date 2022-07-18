@@ -1,7 +1,7 @@
 <template>
    <div class="container">
       <post-from @create="createPost" />
-      <post-list :posts="posts" />
+      <post-list @remove="removePost" :posts="posts" />
    </div>
 </template>
 
@@ -31,6 +31,11 @@
       methods: {
          createPost(post) {
             this.posts.push(post)
+         },
+         removePost(post) {
+            const restPosts = this.posts.filter(item => item.id !== post.id);
+
+            this.posts = restPosts;
          }
       }
    }
