@@ -4,12 +4,16 @@
       
       <input @input="post.title = $event.target.value" v-bind:value="post.title" class="input" type="text" placeholder="Write title">
       <input @input="post.description = $event.target.value" v-bind:value="post.description" class="input" type="text" placeholder="Write description">
-      <button @click="createPost" class="btn">Add post</button>
+      <my-button @click="createPost" class="btn btn-primary block">Add post</my-button>
    </form>
 </template>
 
 <script>
+   import MyButton from '@/components/UI/MyButton.vue';
    export default {
+      components: {
+         MyButton
+      },
       data() {
          return {
             post: {
@@ -42,14 +46,5 @@
 
    .input:focus {
       outline: none;
-   }
-
-   .btn {
-      width: 100%;
-      padding: 10px;
-      background-color: rgb(71, 71, 240);
-      color: white;
-      border: none;
-      cursor: pointer;
    }
 </style>
